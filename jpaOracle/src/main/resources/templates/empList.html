@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>customer</title>
+</head>
+<body>
+   <table>
+      <tr>
+         <th>employee_id</th>
+         <th>first_name</th>
+         <th>last_name</th>
+         <th>email</th>
+         <th>phone_number</th>
+         <th>hire_date</th>
+         <th>job_id</th>
+         <th>salary</th>
+         <th>commission_pct</th>
+         <th>manager_id</th>
+         <th>department_id</th>
+      </tr>
+      <tr th:each="emp   :   ${empList}">
+         <td th:text="${emp.employee_id}"></td>
+         <td th:text="${emp.firstName}"></td>
+         <td th:text="${emp.last_name}"></td>
+         <td th:text="${emp.email}"></td>
+         <td th:text="${emp.phone_number}"></td>
+         <td th:text="${emp.hire_date}"></td>
+         <td th:text="${emp.job_id}"></td>
+         <td th:text="${emp.salary}"></td>
+         <td th:text="${emp.commission_pct}"></td>
+         <td th:text="${emp.manager_id}"></td>
+         <!-- <td th:text="${emp.department_id}"></td> -->
+         <td th:text="${emp.departments} !=null? ${emp.departments.department_name} : X"></td>
+      </tr>
+   </table>
+</body>
+</html>
